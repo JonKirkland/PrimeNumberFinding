@@ -1,0 +1,4 @@
+Results:
+
+100,000 primes found and written to text file without threading:
+Time of 130.629ms

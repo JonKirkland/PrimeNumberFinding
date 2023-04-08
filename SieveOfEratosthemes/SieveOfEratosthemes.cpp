@@ -3,7 +3,9 @@
 #include <cmath>
 #include <string>
 #include <fstream>
+#include <chrono>
 
+using namespace std::chrono;
 class PrimeSieve {
 public:
     //function which takes: the number to search to (numberCap) and vector "primes" which will store prime numbers
@@ -53,7 +55,7 @@ int main() {
     int numberCap;
     std::cout << "Number cap: ";
     std::cin >> numberCap;
-
+    auto timer1 = high_resolution_clock::now();
     PrimeSieve primeSieve;
     std::vector<int> primes;
     primeSieve.generatePrimes(numberCap, primes);
@@ -65,6 +67,11 @@ int main() {
     //for (int prime : primes) {
     //    std::cout << prime << " ";
     //}
+    auto timer2 = high_resolution_clock::now();
 
+    auto ms_int = duration_cast<milliseconds>(timer2 - timer1);
+    duration<double, std::milli> ms_double = timer2 - timer1;
+    std::cout << ms_int.count() << "ms\n";
+    std::cout << ms_double.count() << "ms\n";
     return 0;
 }
