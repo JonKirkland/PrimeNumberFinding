@@ -18,5 +18,14 @@
     <ClCompile Include="SieveOfEratosthemes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SieveThreaded.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SieveSomeOneElses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Results.txt" />
   </ItemGroup>
 </Project>

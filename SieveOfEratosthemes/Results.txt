@@ -1,4 +1,16 @@
 Results:
 
-100,000 primes found and written to text file without threading:
+primes fround from 2-100,000 and written to text file without threading:
 Time of 130.629ms
+primes fround from 2-100,000 and written to text file using threads using code from https://iq.opengenus.org/multi-thread-cpp-find-all-prime-numbers/
+Time of 193.013ms
+The code taken from opengenus.org uses sqrt(N) - 2 number of threads, this is way to many (314 threads) and probably isnt using this many but instead maxing out the amount.
+Modifying this code to only use 5 threads with N = 100,000 :
+86.19 ms
+My threaded code for N=100,000 and 5 threads gives: 
+237.1 ms
+
+I tried to use threading to divide N into chunks, but this is less effective as the algorithm thrives on fact that it takes multiples of previous
+numbers to eliminate future numbers, the algorithm is inherently sequential.
+
+The code privided from opengenus instead uses threads to eliminate numbers, not attempting to do the whole algorithm in parrarel.
